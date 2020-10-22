@@ -32,7 +32,7 @@ class BurgerBuilder extends Component {
     const priceAddition = INGREDIENT_PRICES[type];
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice + priceAddition;
-    this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
+    this.setState( {totalPrice: newPrice, ingredients: updatedIngredients} );
   }
 
   removeIngredientHandler = (type) => {
@@ -53,7 +53,7 @@ class BurgerBuilder extends Component {
   }
   
   render () {
-    /* I feel that this disabledInfo code and the disabled property in the BuildControls below is unnecessary */ 
+    /* I feel that this disabledInfo code and the disabled property in the BuildControls is unnecessary */ 
     const disabledInfo = {
       ...this.state.ingredients
     };
@@ -67,7 +67,8 @@ class BurgerBuilder extends Component {
         <BuildControls
           ingredientAdded={this.addIngredientHandler}
           ingredientRemoved={this.removeIngredientHandler}
-          disabledInfo={disabledInfo} /* unnecessary*/ />
+          disabledInfo={disabledInfo}
+          price={this.state.totalPrice} />
       </Aux>
     );
   }

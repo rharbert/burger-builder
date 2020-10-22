@@ -2,7 +2,7 @@
   width: 80%; 
   margin: auto;
   height: 15rem;
-  /* overflow: scroll; */
+  overflow: scroll;
   text-align: center;
   font-weight: 600;
   font-size: 1.2rem;
