@@ -72,6 +72,10 @@ class BurgerBuilder extends Component {
   purchaseHandler = () => {
     this.setState({purchasing: true});
   }
+
+  purchaseCancelHander = () => {
+    this.setState({purchasing: false});
+  }
   
   render () {
     /* I feel that this disabledInfo code and the disabled property in the BuildControls is unnecessary */ 
@@ -85,7 +89,7 @@ class BurgerBuilder extends Component {
     return (
       <Aux>
         <Modal
-          show={this.state.purchasing}>
+          show={this.state.purchasing} modalClosed={this.purchaseCancelHander}>
           <OrderSummary ingredients={this.state.ingredients} />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
