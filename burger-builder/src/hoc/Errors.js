@@ -8,7 +8,7 @@ const errors = (WrappedComponent, axios ) => {
     state = {
       error: null
     }
-    componentDidMount () {
+    componentWillMount () { //WillMount will soon be unsupported; the Work Around = use constructor
       axios.interceptors.request.use(req => {
         this.setState({error: null});
         return req;
